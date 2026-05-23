@@ -14,7 +14,7 @@ int is_text_file(const char *filename) {
 
     int c;
     while ((c = fgetc(f)) != EOF) {
-        // ASCII kontrolü: 0-8, 11, 12, 14-31 arası kontrol karakterleri metin değil
+        // ASCII kontrolü
         if ((c < 9 || (c > 13 && c < 32)) && c != 0) {
             fclose(f);
             fprintf(stderr, "%s giris dosyasinin formati uyumsuzdur!\n", filename);
